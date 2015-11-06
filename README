@@ -1,0 +1,24 @@
+There is a global config file called config.py, and the master's ip address is stored in this file.
+Be sure to change the master's ip address in this configuration file before you start to run any python file.
+You may also want to change the OUTPUT_DIR in config.py file.
+
+1.Master
+python master_server.py
+
+2.Worker
+python worker_server.py worker_ip_address
+
+3.Client
+python client.py <Sorting|WordCount> input_file split_size num_of_reducers output_file_basename
+example:
+    python client.py Sorting sort.txt 100 1 Sort
+    This will run sorting operation on sort.txt file with split_size of 100 and 1 reducer, and the output file will be stored in directory specified by the OUTPUT_DIR in config.py
+
+4.Sequential execution
+python mr_seq.py <Sorting|WordCount> split_size num_of_reducers input_file output_file_basename
+example:
+    python mr_seq.py Sorting 100 1 sort.txt Sort
+    This will run sequential sorting operation on sort.txt file with split_size of 100 and 1 reducer, and the output file will be stored in current directory
+
+5.Collect
+python mr_collect.py <Sorting|WordCount> output_file_basename
