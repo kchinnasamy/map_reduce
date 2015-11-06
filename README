@@ -21,4 +21,16 @@ example:
     This will run sequential sorting operation on sort.txt file with split_size of 100 and 1 reducer, and the output file will be stored in current directory
 
 5.Collect
-python mr_collect.py <Sorting|WordCount> output_file_basename
+python mr_collect.py folder output_file_basename
+
+
+PS:
+List of Jobs:
+
+    WORD_COUNT_JOB = "WordCount"
+    HAMMING_ENCODE_JOB = "HE"
+    HAMMING_DECODE_JOB = "HD"
+    HAMMING_FIX_JOB = "HF"
+    HAMMING_CHECK_JOB = "HC"
+    HAMMING_ERROR_JOB = "HEr"
+    SORTING_JOB = "Sorting"
